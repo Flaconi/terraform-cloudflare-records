@@ -17,7 +17,7 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 3.4.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 3.2 |
 
 <!-- TFDOCS_PROVIDER_END -->
 

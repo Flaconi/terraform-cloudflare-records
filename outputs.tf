@@ -6,7 +6,7 @@ output "zone_id" {
 output "records" {
   description = "Cloudflare Zone DNS Records"
   value = {
-  for k, v in local.records : k =>
+    for k, v in local.records : k =>
     { id = cloudflare_record.this[k].id }
   }
 }
