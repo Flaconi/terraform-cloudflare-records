@@ -60,11 +60,11 @@ Type:
 
 ```hcl
 list(object({
-      name    = string
-      value   = string
-      type    = string
-      ttl     = number
-      proxied = bool
+    name    = string
+    value   = string
+    type    = string
+    ttl     = number
+    proxied = bool
   }))
 ```
 
@@ -83,7 +83,10 @@ Default: `false`
 <!-- TFDOCS_OUTPUTS_START -->
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_records"></a> [records](#output\_records) | Cloudflare Zone DNS Records |
+| <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | Cloudflare Zone ID |
 
 <!-- TFDOCS_OUTPUTS_END -->
 

@@ -10,14 +10,14 @@ variable "domain" {
 
 variable "records" {
   description = "Cloudflare domain name to create"
-  type        = list(object({
-      name    = string
-      value   = string
-      type    = string
-      ttl     = number
-      proxied = bool
+  type = list(object({
+    name    = string
+    value   = string
+    type    = string
+    ttl     = number
+    proxied = bool
   }))
-  default     = []
+  default = []
 }
 
 variable "allow_overwrite" {

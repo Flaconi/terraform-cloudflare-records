@@ -1,5 +1,9 @@
+locals {
+  records = { for r in var.records: "${r.type}_${r.name}.${var.domain}" => r }
+}
+
 resource "cloudflare_record" "this" {
-  for_each = { for r in var.records: "${r.type}_${r.name}.${var.domain}" => r }
+  for_each = local.records
 
   zone_id  = data.cloudflare_zone.this.id
   name     = "${each.value.name}.${var.domain}."
