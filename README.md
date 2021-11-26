@@ -54,17 +54,18 @@ The following input variables are optional (have default values):
 
 ### <a name="input_records"></a> [records](#input\_records)
 
-Description: Cloudflare domain name to create
+Description: List of names to create
 
 Type:
 
 ```hcl
 list(object({
-    name    = string
-    value   = string
-    type    = string
-    ttl     = number
-    proxied = bool
+    name     = string
+    value    = string
+    type     = string
+    ttl      = number
+    proxied  = bool
+    priority = number
   }))
 ```
 

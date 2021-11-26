@@ -9,13 +9,14 @@ variable "domain" {
 }
 
 variable "records" {
-  description = "Cloudflare domain name to create"
+  description = "List of names to create"
   type = list(object({
-    name    = string
-    value   = string
-    type    = string
-    ttl     = number
-    proxied = bool
+    name     = string
+    value    = string
+    type     = string
+    ttl      = number
+    proxied  = bool
+    priority = number
   }))
   default = []
 }
