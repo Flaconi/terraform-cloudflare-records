@@ -1,6 +1,26 @@
 locals {
   records = [
     {
+      name = "somedomain"
+      type = "CAA"
+      ttl  = 120
+      data = {
+        flags = 0
+        tag   = "issue"
+        value = "someca.com"
+      }
+    },
+    {
+      name = "somedomain"
+      type = "CAA"
+      ttl  = 120
+      data = {
+        flags = 0
+        tag   = "issue"
+        value = "anotherca.com"
+      }
+    },
+    {
       name     = "myproxieddomain"
       value    = "example.com"
       type     = "CNAME"
@@ -60,7 +80,7 @@ locals {
 }
 
 module "records" {
-  source = "./../../"
+  source    = "./../../"
   api_token = var.api_token
   domain    = var.domain
   records   = local.records

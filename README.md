@@ -7,6 +7,13 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-cloudflare-records.svg)](https://github.com/flaconi/terraform-cloudflare-records/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Important notice
+
+:warning: This module uses experimental optional attributes.
+
+More about it [here](https://www.terraform.io/language/expressions/type-constraints#experimental-optional-object-type-attributes).
+
+
 <!-- TFDOCS_HEADER_START -->
 
 
@@ -48,10 +55,6 @@ Description: Cloudflare domain name to create
 
 Type: `string`
 
-## Optional Inputs
-
-The following input variables are optional (have default values):
-
 ### <a name="input_records"></a> [records](#input\_records)
 
 Description: List of names to create
@@ -61,15 +64,22 @@ Type:
 ```hcl
 list(object({
     name     = string
-    value    = string
+    value    = optional(string)
     type     = string
     ttl      = number
-    proxied  = bool
-    priority = number
+    proxied  = optional(bool)
+    priority = optional(number)
+    data = optional(object({
+      flags = number
+      tag   = string
+      value = string
+    }))
   }))
 ```
 
-Default: `[]`
+## Optional Inputs
+
+The following input variables are optional (have default values):
 
 ### <a name="input_allow_overwrite"></a> [allow\_overwrite](#input\_allow\_overwrite)
 

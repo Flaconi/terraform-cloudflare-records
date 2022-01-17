@@ -33,7 +33,7 @@ No modules.
 | <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | Cloudflare Hosted Zone ID | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Cloudflare Hosted Zone Record Name | `string` | n/a | yes |
 | <a name="input_type"></a> [type](#input\_type) | Cloudflare Hosted Zone Record Type | `string` | n/a | yes |
-| <a name="input_values"></a> [values](#input\_values) | List of values to create | <pre>list(object({<br>    value    = string<br>    ttl      = number<br>    proxied  = bool<br>    priority = number<br>  }))</pre> | `[]` | no |
+| <a name="input_records"></a> [records](#input\_records) | List of records to create | <pre>list(object({<br>    value    = optional(string)<br>    ttl      = optional(number)<br>    proxied  = optional(bool)<br>    priority = optional(number)<br>    data = optional(object({<br>      flags = number<br>      tag   = string<br>      value = string<br>    }))<br>  }))</pre> | `[]` | no |
 | <a name="input_allow_overwrite"></a> [allow\_overwrite](#input\_allow\_overwrite) | Allow override existing records | `bool` | `false` | no |
 
 ## Outputs

@@ -12,13 +12,17 @@ variable "records" {
   description = "List of names to create"
   type = list(object({
     name     = string
-    value    = string
+    value    = optional(string)
     type     = string
     ttl      = number
-    proxied  = bool
-    priority = number
+    proxied  = optional(bool)
+    priority = optional(number)
+    data = optional(object({
+      flags = number
+      tag   = string
+      value = string
+    }))
   }))
-  default = []
 }
 
 variable "allow_overwrite" {
