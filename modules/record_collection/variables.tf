@@ -13,13 +13,18 @@ variable "type" {
   type        = string
 }
 
-variable "values" {
-  description = "List of values to create"
+variable "records" {
+  description = "List of records to create"
   type = list(object({
-    value    = string
-    ttl      = number
-    proxied  = bool
-    priority = number
+    value    = optional(string)
+    ttl      = optional(number)
+    proxied  = optional(bool)
+    priority = optional(number)
+    data = optional(object({
+      flags = number
+      tag   = string
+      value = string
+    }))
   }))
   default = []
 }
