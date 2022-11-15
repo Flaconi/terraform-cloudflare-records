@@ -14,8 +14,8 @@ variable "records" {
     name     = string
     value    = optional(string)
     type     = string
-    ttl      = number
-    proxied  = optional(bool)
+    ttl      = optional(number, 1)
+    proxied  = optional(bool, false)
     priority = optional(number)
     data = optional(object({
       flags = number
