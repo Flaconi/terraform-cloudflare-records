@@ -24,7 +24,7 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 3.2 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 3.27 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -33,8 +33,8 @@ More about it [here](https://www.terraform.io/language/expressions/type-constrai
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 3.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 3.27 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -66,8 +66,8 @@ list(object({
     name     = string
     value    = optional(string)
     type     = string
-    ttl      = number
-    proxied  = optional(bool)
+    ttl      = optional(number, 1)
+    proxied  = optional(bool, false)
     priority = optional(number)
     data = optional(object({
       flags = number

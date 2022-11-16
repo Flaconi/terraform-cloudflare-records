@@ -17,8 +17,8 @@ variable "records" {
   description = "List of records to create"
   type = list(object({
     value    = optional(string)
-    ttl      = optional(number)
-    proxied  = optional(bool)
+    ttl      = optional(number, 1)
+    proxied  = optional(bool, false)
     priority = optional(number)
     data = optional(object({
       flags = number
