@@ -77,7 +77,7 @@ test: _pull-tf
 		echo "------------------------------------------------------------"; \
 		echo "# Terraform init"; \
 		echo "------------------------------------------------------------"; \
-		if docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
+		if docker run $$(tty -s && echo "-it" || echo) --rm --network host -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" hashicorp/terraform:$(TF_VERSION) \
 			init \
 				-lock=false \
 				-upgrade \
@@ -88,7 +88,7 @@ test: _pull-tf
 			echo "OK"; \
 		else \
 			echo "Failed"; \
-			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ || true; \
+			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=sh hashicorp/terraform:$(TF_VERSION) -c "rm -rf .terraform*" || true; \
 			exit 1; \
 		fi; \
 		echo; \
@@ -100,10 +100,10 @@ test: _pull-tf
 				$(ARGS) \
 				.; then \
 			echo "OK"; \
-			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ || true; \
+			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=sh hashicorp/terraform:$(TF_VERSION) -c "rm -rf .terraform*" || true; \
 		else \
 			echo "Failed"; \
-			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=rm hashicorp/terraform:$(TF_VERSION) -rf .terraform/ || true; \
+			docker run $$(tty -s && echo "-it" || echo) --rm -v "$(CURRENT_DIR):/t" --workdir "$${DOCKER_PATH}" --entrypoint=sh hashicorp/terraform:$(TF_VERSION) -c "rm -rf .terraform*" || true; \
 			exit 1; \
 		fi; \
 		echo; \
