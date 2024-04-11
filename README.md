@@ -5,13 +5,8 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 [![lint](https://github.com/flaconi/terraform-cloudflare-records/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-cloudflare-records/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-cloudflare-records/workflows/test/badge.svg)](https://github.com/flaconi/terraform-cloudflare-records/actions?query=workflow%3Atest)
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-cloudflare-records.svg)](https://github.com/flaconi/terraform-cloudflare-records/releases)
+[![Terraform](https://img.shields.io/badge/Terraform--registry-cloudflare--records-brightgreen.svg)](https://registry.terraform.io/modules/flaconi/records/cloudflare/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-## Important notice
-
-:warning: This module uses experimental optional attributes.
-
-More about it [here](https://www.terraform.io/language/expressions/type-constraints#experimental-optional-object-type-attributes).
 
 
 <!-- TFDOCS_HEADER_START -->

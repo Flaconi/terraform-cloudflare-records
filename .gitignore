@@ -18,5 +18,8 @@ override.tf.json
 # Lock file
 .terraform.lock.hcl
 
+# Vars file
+/*.tfvars
+
 #IDEA
 .idea
