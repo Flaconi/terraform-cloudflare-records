@@ -14,7 +14,7 @@ Terraform submodule to create a list of Cloudflare DNS records grouped by type a
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 4.20 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 4.39 |
 
 ## Modules
 
