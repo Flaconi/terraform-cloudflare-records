@@ -22,7 +22,7 @@ locals {
     },
     {
       name     = "myproxieddomain"
-      value    = "example.com"
+      content  = "example.com"
       type     = "CNAME"
       ttl      = 1
       proxied  = true
@@ -30,7 +30,7 @@ locals {
     },
     {
       name     = "mytestdomain"
-      value    = "8.8.8.8"
+      content  = "8.8.8.8"
       type     = "A"
       ttl      = 600
       proxied  = false
@@ -38,7 +38,7 @@ locals {
     },
     {
       name     = "mytestdomain"
-      value    = "4.4.4.4"
+      content  = "4.4.4.4"
       type     = "A"
       ttl      = 600
       proxied  = false
@@ -46,7 +46,7 @@ locals {
     },
     {
       name     = "mymaildomain"
-      value    = "mail1.mx.maildomainexample.com"
+      content  = "mail1.mx.maildomainexample.com"
       type     = "MX"
       ttl      = 300
       proxied  = false
@@ -54,7 +54,7 @@ locals {
     },
     {
       name     = "mymaildomain"
-      value    = "mail2.mx.maildomainexample.com"
+      content  = "mail2.mx.maildomainexample.com"
       type     = "MX"
       ttl      = 300
       proxied  = false
@@ -62,7 +62,7 @@ locals {
     },
     {
       name     = "mynsdomain"
-      value    = "ns1.mytestdns.com"
+      content  = "ns1.mytestdns.com"
       type     = "NS"
       ttl      = 300
       proxied  = false
@@ -70,7 +70,7 @@ locals {
     },
     {
       name     = "mynsdomain"
-      value    = "ns2.mytestdns.com"
+      content  = "ns2.mytestdns.com"
       type     = "NS"
       ttl      = 300
       proxied  = false
