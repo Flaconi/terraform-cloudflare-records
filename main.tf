@@ -4,7 +4,7 @@ resource "cloudflare_dns_record" "this" {
   # Required
   zone_id = local.zone_id
   type    = each.value.type
-  name    = each.value.name
+  name    = each.value.subdomain != "" ? "${each.value.subdomain}.${var.domain}" : var.domain
   ttl     = each.value.ttl
 
   # Optional

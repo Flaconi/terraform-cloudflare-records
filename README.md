@@ -58,12 +58,12 @@ Type:
 
 ```hcl
 list(object({
-    name     = string
-    content  = optional(string)
-    type     = string
-    ttl      = optional(number, 1)
-    proxied  = optional(bool, false)
-    priority = optional(number)
+    subdomain = optional(string, "") # Default is root domain
+    content   = optional(string)
+    type      = string
+    ttl       = optional(number, 1)
+    proxied   = optional(bool, false)
+    priority  = optional(number)
     data = optional(object({
       flags = number
       tag   = string
