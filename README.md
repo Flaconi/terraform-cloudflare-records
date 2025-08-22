@@ -19,7 +19,7 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.52.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -29,7 +29,7 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 4.52.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.8 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -58,12 +58,12 @@ Type:
 
 ```hcl
 list(object({
-    name     = string
-    value    = optional(string)
-    type     = string
-    ttl      = optional(number, 1)
-    proxied  = optional(bool, false)
-    priority = optional(number)
+    subdomain = optional(string, "") # Default is root domain
+    content   = optional(string)
+    type      = string
+    ttl       = optional(number, 1)
+    proxied   = optional(bool, false)
+    priority  = optional(number)
     data = optional(object({
       flags = number
       tag   = string
@@ -74,15 +74,7 @@ list(object({
 
 ## Optional Inputs
 
-The following input variables are optional (have default values):
-
-### <a name="input_allow_overwrite"></a> [allow\_overwrite](#input\_allow\_overwrite)
-
-Description: Allow override existing records
-
-Type: `bool`
-
-Default: `false`
+No optional inputs.
 
 <!-- TFDOCS_INPUTS_END -->
 
