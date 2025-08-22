@@ -95,9 +95,12 @@ locals {
   ]
 }
 
-module "records" {
-  source    = "./../../"
+provider "cloudflare" {
   api_token = var.api_token
-  domain    = var.domain
-  records   = local.records
+}
+
+module "records" {
+  source  = "./../../"
+  domain  = var.domain
+  records = local.records
 }
