@@ -12,4 +12,5 @@ resource "cloudflare_dns_record" "this" {
   proxied  = each.value.proxied
   priority = each.value.priority
   data     = each.value.data
+  comment  = each.value.comment
 }

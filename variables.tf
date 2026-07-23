@@ -17,5 +17,6 @@ variable "records" {
       tag   = string
       value = string
     }))
+    comment = optional(string)
   }))
 }
