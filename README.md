@@ -19,7 +19,7 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 5.8.2 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.22 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -29,7 +29,7 @@ Terraform module to create set of DNS records in Cloudflare Hosted Zone.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | 5.8.2 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.22 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -63,6 +63,7 @@ list(object({
       tag   = string
       value = string
     }))
+    comment = optional(string)
   }))
 ```
 
